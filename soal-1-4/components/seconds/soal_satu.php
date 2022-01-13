@@ -1,5 +1,5 @@
 <?php
-// Teknikal Test Diigital Ocean 2022
+// Teknikal Test Digital Oasis 2022
 // File: component/soal1
 /*
 created by :
@@ -9,7 +9,7 @@ created by :
 	github username : codesyariah122
 */
 use \app\SoalSatu\SoalSatu;
-if(isset($_GET['soal1_start']) AND isset($_SESSION['soal1_session'])):
+if(isset($_GET['soal1_start']) && !isset($_REQUEST['soal1_process']) && !isset($_REQUEST['loops'])):
 	$soal_satu = new SoalSatu('Result Soal Satu','','');
 ?>
 <div class="container  mb-5">
@@ -75,22 +75,116 @@ if(isset($_GET['soal1_start']) AND isset($_SESSION['soal1_session'])):
 			</form>
 		</div>
 	</div>
+	<?php endif; ?>
 
 	<div class="row justify-content-center">
 		<div class="col-lg-12 col-xs-12 col-sm-12">
-		<?php if(isset($_REQUEST['soal1_process'])): ?>
-			<?php
+			<?php if(isset($_REQUEST['soal1_process'])): ?>
+				<h5 class="blockquot-footer">Jawaban <?=$_SESSION['soal1_session'] ?>: </h5>
+				<blockquote>
+				Silahkan inputkan jumlah proses yang akan di jalankan, kemudian click/tap tombol <strong>Process</strong> :  <br>
+				<small>
+					<strong>
+						Input 1 : untuk angka antara (1-10) <br>
+						Input 2 : untuk angka antara (1-15) <br>
+						Input 3 : untuk angka antara (1-5) <br>
+					</strong>
+				</small>
+			</blockquote>
+				<?php
 				$process = new SoalSatu('Result Soal Satu','test','soal1');
-				$inputs = $process->trap_process($_REQUEST);
-				var_dump($inputs);
-			?>
-		<?php endif; ?>
+				$process->trap_process($_REQUEST);
+				?>
+			<?php endif; ?>
 		</div>
+	</div>
+
+	<div class="row justify-content-center">
+		<?php if (isset($_REQUEST['loops'])): ?>
+			<?php  
+				$loop_process = new SoalSatu('Result Process Loop','loop','soal1');
+				$loop_process->process_loop([
+					'bil1' => (isset($_REQUEST['bil1'])) ? $_REQUEST['bil1'] : '',
+					'bil2' => (isset($_REQUEST['bil2'])) ? $_REQUEST['bil2'] : '' ,
+					'bil3' => (isset($_REQUEST['bil3'])) ? $_REQUEST['bil3'] : ''
+				]);
+				if($_SESSION['loops']){
+					$firsts = $_SESSION['loops']['bil1'];
+					$seconds = $_SESSION['loops']['bil2'];
+					$thirds = $_SESSION['loops']['bil3'];
+			?>
+			<small class="mt-3 mb-2 text-info">Hasil Bilangan berdasarkan input yang terkirim</small>
+			<div class="table-responsive">
+				<table class="table table-dark table-sm table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">Input: 10</th>
+							<th scope="col">Input: 15</th>
+							<th scope="col">Input: 5</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<!-- Bilangan 1 - 10 -->
+							<td>
+								<?php for($i = 1; $i <= $firsts; $i+=1): ?>
+									<?=$i; ?>
+									<?php  
+									if($i % 2 == 0 && $i % 6 !== 0){
+										echo "DI";
+									}elseif ($i % 3 == 0 && $i % 6 !== 0) {
+										echo "OS";
+									}elseif($i % 6 == 0){
+										echo "DIGITAL OASIS";
+									}
+									?>
+									<br>
+								<?php endfor; ?>
+							</td>
+							<!-- Bilangan 1 - 15 -->
+							<td>
+								<?php for($i = 1; $i <= $seconds; $i+=1): ?>
+									<?=$i; ?>
+									<?php  
+									if($i % 2 == 0 && $i % 6 !== 0){
+										echo "DI";
+									}elseif ($i % 3 == 0 && $i % 6 !== 0) {
+										echo "OS";
+									}elseif($i % 6 == 0){
+										echo "DIGITAL OASIS";
+									}
+									?>
+									<br>
+								<?php endfor; ?>
+							</td>
+							<!-- Bilangan 1 - 5 -->
+							<td>
+								<?php for($i = 1; $i <= $thirds; $i+=1): ?>
+									<?=$i; ?>
+									<?php  
+									if($i % 2 == 0 && $i % 6 !== 0){
+										echo "DI";
+									}elseif ($i % 3 == 0 && $i % 6 !== 0) {
+										echo "OS";
+									}elseif($i % 6 == 0){
+										echo "DIGITAL OASIS";
+									}
+									?>
+									<br>
+								<?php endfor; ?>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<?php }?>
+		<?php endif ?>
 	</div>
 
 </div>
 
-<?php endif; ?>
+
 
 <script>
 	document.querySelector('#loading1').style.display="none"

@@ -1,6 +1,6 @@
 <?php
-// Teknikal Test Diigital Ocean 2022
-// File: component/soal1
+// Teknikal Test Diigital Oasis 2022
+// File: component/soal2
 /*
 created by :
 	nama : Puji Ermanto

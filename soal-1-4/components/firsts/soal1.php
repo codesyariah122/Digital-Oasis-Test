@@ -1,5 +1,5 @@
 <?php
-// Teknikal Test Diigital Ocean 2022
+// Teknikal Test Diigital Oasis 2022
 // File: component/soal1
 /*
 created by :

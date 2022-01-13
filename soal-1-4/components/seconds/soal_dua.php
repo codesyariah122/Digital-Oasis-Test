@@ -1,6 +1,6 @@
 <div class="container  mb-5">
 <?php
-// Teknikal Test Diigital Ocean 2022
+// Teknikal Test Digital Oasis 2022
 // File: component/soal1
 /*
 created by :
@@ -197,7 +197,7 @@ if(isset($_REQUEST['update'])):
 			<tbody>
 				<?php foreach($_SESSION['fetchs'] as $data): ?>
 					<tr>
-						<th scope="row"><?=$data['id'] ?></th>
+						<td><?=$data['id'] ?></td>
 						<td><?=$data['tahun'] ?></td>
 					</tr>
 				<?php endforeach; ?>

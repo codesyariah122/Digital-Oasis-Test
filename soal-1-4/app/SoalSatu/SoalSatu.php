@@ -56,6 +56,31 @@ class SoalSatu extends BaseClass {
 			$method = new Methods;
 			$method->result_process($request);
 		endif;
-		
 	}
+
+	public function process_loop($data)
+	{
+		$this->alert = ['error', 'success'];
+		$this->dir = 'components/alerts/';
+		if(isset($data['bil1']) || isset($data['bil2']) || isset($data['bil1'])):
+			if(empty($data['bil1'])):
+				$alert = new BaseClass;
+				$alert->start_session('url', 'http://localhost:8888/?soal1_start=soal1');
+				$alert->alert([
+					'dir'=>  $this->dir,
+					'file' => $this->alert[0]
+				]);
+			else:
+				$alert = new BaseClass;
+				$alert->start_session('url', 'http://localhost:8888/?soal1_start=soal1');
+				$alert->alert([
+					'dir'=>  $this->dir,
+					'file' => $this->alert[1]
+				]);
+				$loops = new BaseClass;
+				$loops->start_session('loops', $data);
+			endif;
+		endif;
+	}
+
 }

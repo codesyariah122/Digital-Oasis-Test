@@ -16,6 +16,8 @@ require_once(dirname(__FILE__)) .'/app/init.php';
 */
 use \app\BaseClass\BaseClass;
 use \app\SoalSatu\SoalSatu;
+use \app\SoalDua\SoalDua;
+use \app\SoalTiga\SoalTiga;
 // instantiasi and using title method
 $base = new BaseClass('Digital Oasis Teknikal Test');
 // instantiasi and using component method
@@ -72,13 +74,17 @@ $profile_component = new BaseClass;
             <div class="card-body">
               <?php 
                   $soal_satu = new SoalSatu('Soal Satu', 'soal1_session', 'soal1_start');
-                  $soal_dua = new SoalSatu('Soal Dua', 'soal2_session', 'soal2_start'); 
+                  $soal_dua = new SoalDua('Soal Dua', 'soal2_session', 'soal2_start');
+                  $soal_tiga = new SoalTiga('Soal Tiga', 'soal3_session', 'soal3_start');
               ?>
               <?php if(isset($_GET['soal1_start'])): 
                 $soal_satu->second_component($_REQUEST, 'components/seconds/', 'soal_satu');
               ?>
               <?php elseif(isset($_GET['soal2_start'])): 
                 $soal_dua->second_component($_REQUEST, 'components/seconds/', 'soal_dua');
+              ?>
+              <?php elseif(isset($_GET['soal3_start'])): 
+                $soal_tiga->second_component($_REQUEST, 'components/seconds/', 'soal_tiga');
               ?>
               <?php endif; ?>
             </div>

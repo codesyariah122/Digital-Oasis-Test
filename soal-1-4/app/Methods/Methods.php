@@ -29,6 +29,8 @@ class Methods extends BaseClass {
 			break;
 			case 'soal2':
 			require_once $dir.$file.'.php';
+			case 'soal3':
+			require_once $dir.$file.'.php';
 			default:
 				# code...
 			break;
@@ -56,6 +58,25 @@ class Methods extends BaseClass {
 
 	public function result_process($data)
 	{
-		return $data;
+		$jml = (int)$data['jml'];
+
+		echo "<form action='http://localhost:8888/index.php?soal1_start=soal1' method='POST' class='mt-3'>";
+		for($i=1; $i<=$jml; $i++):
+			echo "
+				<div class='form-group'>
+					<label for='bil{$i}'>Input {$i}</label>
+					<input type='number' name='bil{$i}' min='1' max='15' class='form-control'>
+				</div>
+			";
+		endfor;
+		echo "
+			<div class='form-group'>
+				<div class='d-grid gap-2 mt-3'>
+					<button type='submit' name='loops' class='btn btn-primary'>Process</button>
+					</button>
+				</div>
+			</div>
+		</form>
+		";
 	}
 }
