@@ -44,7 +44,7 @@ if(isset($_GET['soal1_start']) && !isset($_REQUEST['soal1_process']) && !isset($
 
 	<!-- Jawaban -->
 	<div class="row  justify-content-center">
-		<div class="col-lg-12 col-xs-12 col-sm-12">
+		<div class="col-lg-10 col-xs-10 col-sm-10">
 			<h5 class="blockquot-footer">Jawaban <?=$_SESSION['soal1_session'] ?>: </h5>
 			<blockquote>
 				Silahkan inputkan jumlah proses yang akan di jalankan, kemudian click/tap tombol <strong>Process</strong> :  <br>

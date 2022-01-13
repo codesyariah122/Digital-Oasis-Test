@@ -30,7 +30,7 @@ created by :
 
 	<!-- Jawaban -->
 	<div class="row  justify-content-center">
-		<div class="col-lg-12 col-xs-12 col-sm-12">
+		<div class="col-lg-10 col-xs-10 col-sm-10">
 			<h5 class="blockquot-footer">Jawaban <?=$_SESSION['soal2_session'] ?>: </h5>
 			<blockquote>
 				Siapkan database terlebih dahulu, sebelumnya jalankan aplikasi database SQL Anda (mysql/mariadb/pgsql) atau menggunakan web server software package (xampp/mamp/lamp) aktifkan database SQL melalui aplikasi web server software package :  <br>
