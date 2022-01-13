@@ -89,7 +89,10 @@ if(isset($_GET['soal3_start']) && !isset($_REQUEST['soal3_process'])):
 	<div class="row justify-content-center">
 		<div class="col-lg-12 col-xs-12 col-sm-12">
 			<?php if(isset($_REQUEST['soal3_process'])): ?>
-				<?php var_dump($_REQUEST) ?>
+				<?php 
+					$process = new SoalTiga('Result Soal Tiga','soal3','start');
+					$process->trap_process($_REQUEST);
+				 ?>
 			<?php endif; ?>
 		</div>
 	</div>

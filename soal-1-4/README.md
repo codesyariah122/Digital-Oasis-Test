@@ -1,5 +1,17 @@
 ### Teknikal Test Digital Oasis
 
+#### Preview Program  
+<img src="ss/soal1.jpg">  
+
+<img src="ss/soal2.jpg">  
+
+
+<img src="ss/soal3.jpg">  
+
+
+<img src="ss/soal4.jpg">
+
+
 Profile :  
 > Nama : Puji Ermanto
 Email : pujiermanto@gmail.com

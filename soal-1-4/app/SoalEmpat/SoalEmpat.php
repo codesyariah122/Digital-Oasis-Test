@@ -32,4 +32,28 @@ class SoalEmpat extends BaseClass {
 		$soal1_session->start_session($this->name,$this->value);
 		$method->setup_process($this->request, $this->value, $this->dir, $this->file);
 	}
+
+	public function format_bilangan($bil)
+	{
+		echo "<strong>Bilangan Character : {$bil}</strong>";
+		$arr = explode('.',$bil);
+		$new_bill = implode($arr);
+		$bil = str_split($new_bill);
+		// echo "<pre>";
+		// echo count($arr);
+		// echo "</pre/>";
+
+		// echo "<pre>";
+		// var_dump($bil);
+		// echo "</pre/>";
+		echo "<br/>";
+		for($i=0;$i <= count($bil)-1; $i++){
+			echo $bil[$i];
+			for($j=count($bil)-1; $j > $i; $j--){
+				echo 0;
+			}
+
+			echo '<br/>';
+		}
+	}
 }

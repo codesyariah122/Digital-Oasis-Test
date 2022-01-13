@@ -18,6 +18,7 @@ use \app\BaseClass\BaseClass;
 use \app\SoalSatu\SoalSatu;
 use \app\SoalDua\SoalDua;
 use \app\SoalTiga\SoalTiga;
+use \app\SoalEmpat\SoalEmpat;
 // instantiasi and using title method
 $base = new BaseClass('Digital Oasis Teknikal Test');
 // instantiasi and using component method
@@ -76,6 +77,7 @@ $profile_component = new BaseClass;
                   $soal_satu = new SoalSatu('Soal Satu', 'soal1_session', 'soal1_start');
                   $soal_dua = new SoalDua('Soal Dua', 'soal2_session', 'soal2_start');
                   $soal_tiga = new SoalTiga('Soal Tiga', 'soal3_session', 'soal3_start');
+                  $soal_empat = new SoalTiga('Soal Empat', 'soal4_session', 'soal4_start');
               ?>
               <?php if(isset($_GET['soal1_start'])): 
                 $soal_satu->second_component($_REQUEST, 'components/seconds/', 'soal_satu');
@@ -86,6 +88,15 @@ $profile_component = new BaseClass;
               <?php elseif(isset($_GET['soal3_start'])): 
                 $soal_tiga->second_component($_REQUEST, 'components/seconds/', 'soal_tiga');
               ?>
+              <?php elseif(isset($_GET['soal4_start'])): 
+                $soal_empat->second_component($_REQUEST, 'components/seconds/', 'soal_empat');
+              ?>
+              <?php else: ?>
+                <picture>
+                  
+                  Component akan muncul setelah tombol di click / tap ...
+
+                </picture>
               <?php endif; ?>
             </div>
           </div>

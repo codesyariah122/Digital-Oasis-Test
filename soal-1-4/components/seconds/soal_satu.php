@@ -128,7 +128,7 @@ if(isset($_GET['soal1_start']) && !isset($_REQUEST['soal1_process']) && !isset($
 							<!-- Bilangan 1 - 10 -->
 							<td>
 								<?php for($i = 1; $i <= $firsts; $i+=1): ?>
-									<?=$i; ?>
+									<b><?=$i; ?></b> &nbsp;
 									<?php  
 									if($i % 2 == 0 && $i % 6 !== 0){
 										echo "DI";
@@ -144,7 +144,7 @@ if(isset($_GET['soal1_start']) && !isset($_REQUEST['soal1_process']) && !isset($
 							<!-- Bilangan 1 - 15 -->
 							<td>
 								<?php for($i = 1; $i <= $seconds; $i+=1): ?>
-									<?=$i; ?>
+									<b><?=$i; ?></b> &nbsp;
 									<?php  
 									if($i % 2 == 0 && $i % 6 !== 0){
 										echo "DI";
@@ -160,7 +160,7 @@ if(isset($_GET['soal1_start']) && !isset($_REQUEST['soal1_process']) && !isset($
 							<!-- Bilangan 1 - 5 -->
 							<td>
 								<?php for($i = 1; $i <= $thirds; $i+=1): ?>
-									<?=$i; ?>
+									<b><?=$i; ?></b> &nbsp;
 									<?php  
 									if($i % 2 == 0 && $i % 6 !== 0){
 										echo "DI";

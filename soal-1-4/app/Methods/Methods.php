@@ -29,8 +29,13 @@ class Methods extends BaseClass {
 			break;
 			case 'soal2':
 			require_once $dir.$file.'.php';
+			break;
 			case 'soal3':
 			require_once $dir.$file.'.php';
+			break;
+			case 'soal4':
+			require_once $dir.$file.'.php';
+			break;
 			default:
 				# code...
 			break;
@@ -60,7 +65,7 @@ class Methods extends BaseClass {
 	{
 		$jml = (int)$data['jml'];
 
-		echo "<form action='http://localhost:8888/index.php?soal1_start=soal1' method='POST' class='mt-3'>";
+		echo "<form action='http://localhost:8888/?soal1_start=soal1' method='POST' class='mt-3'>";
 		for($i=1; $i<=$jml; $i++):
 			echo "
 				<div class='form-group'>
@@ -78,5 +83,41 @@ class Methods extends BaseClass {
 			</div>
 		</form>
 		";
+	}
+
+	public function check_anagram($req)
+	{
+		// string pertama
+		$string_1=$req['string1'];
+		$shuffle1=str_shuffle($string_1);
+
+		// string ke dua
+		$string_2=$req['string2'];
+		$shuffle2=str_shuffle($string_2);
+
+		$result1 = count_chars($string_1, 1) == count_chars($shuffle1) ? 'true' : 'false' ;
+
+		$result2 = count_chars($string_2, 1) == count_chars($shuffle2) ? 'true' : 'false' ;
+
+		echo "
+			<div class='table-responsive'>
+				<table class='table table-dark table-sm table-bordered'>
+					<thead>
+						<tr>
+							<th scope='col'>Input: {$string_1}  {$shuffle1}</th>
+							<th scope='col'>Input: {$string_2}  {$shuffle2}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Output : <b>{$result1}</b></td>
+							<td>Output : <b>{$result2}</b></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		";
+
+
 	}
 }

@@ -10,7 +10,7 @@ created by :
 */
 
 use \app\SoalEmpat\SoalEmpat;
-$soal_empat = new SoalEmpat('Soal Tiga','soal3_start','soal3');
+$soal_empat = new SoalEmpat('Soal Empat','soal4_start','soal4');
 ?>
 <form action="<?php $_SERVER['PHP_SELF']?>" method="GET">
 	<button type="submit" name="soal4_start" value="soal4" class="btn <?=isset($_GET['soal4_start']) ? 'btn-primary' : 'btn-outline-primary';?> rounded-pill">
