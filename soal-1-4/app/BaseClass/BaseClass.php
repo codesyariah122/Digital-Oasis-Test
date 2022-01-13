@@ -1,5 +1,5 @@
 <?php
-// Teknikal Test Diigital Ocean 2022
+// Teknikal Test Digital Oasis 2022
 // File: app/BaseClass
 /*
 created by :
