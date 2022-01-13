@@ -11,6 +11,8 @@ created by :
 */
 	use \app\SoalDua\SoalDua;
 	use \app\Database\Database;
+	// var_dump($_GET);
+	// die;
 	if(isset($_GET['soal2_start']) && !isset($_REQUEST['soal2_process']) && !isset($_REQUEST['update'])):
 		?>
 	<!-- Study Case -->
@@ -57,11 +59,11 @@ created by :
 				<div class="form-group">
 					<div class="d-grid gap-2 mt-3">
 						<button type="submit" class="btn btn-primary rounded-pill" name="soal2_process" onclick="soal2_btn()">
-							<div id="loading">
+							<div id="loading2">
 								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
 								Loading...
 							</div>
-							<div id="text_btn">
+							<div id="text_btn2">
 								Setup Database
 							</div>
 							
@@ -209,10 +211,10 @@ if(isset($_REQUEST['update'])):
 
 
 <script>
-	document.querySelector('#loading').style.display="none"
+	document.querySelector('#loading2').style.display="none"
 	const soal2_btn = () =>  {
-		document.querySelector('#loading').style.display="block"
-		document.querySelector('#text_btn').style.display="none"
+		document.querySelector('#loading2').style.display="block"
+		document.querySelector('#text_btn2').style.display="none"
 	}
 </script>
 

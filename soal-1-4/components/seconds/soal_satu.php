@@ -61,7 +61,15 @@ if(isset($_GET['soal1_start']) AND isset($_SESSION['soal1_session'])):
 				</div>
 				<div class="form-group">
 					<div class="d-grid gap-2 mt-3">
-						<button type="submit" class="btn btn-primary rounded-pill" name="soal1_process">Process</button>
+						<button type="submit" class="btn btn-primary rounded-pill" name="soal1_process" onclick="soal1_btn()">
+							<div id="loading1">
+								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+								Loading...
+							</div>
+							<div id="text_btn1">
+								Process
+							</div>
+						</button>
 					</div>
 				</div>
 			</form>
@@ -71,7 +79,11 @@ if(isset($_GET['soal1_start']) AND isset($_SESSION['soal1_session'])):
 	<div class="row justify-content-center">
 		<div class="col-lg-12 col-xs-12 col-sm-12">
 		<?php if(isset($_REQUEST['soal1_process'])): ?>
-			<?=$_REQUEST['jml'] ?>
+			<?php
+				$process = new SoalSatu('Result Soal Satu','test','soal1');
+				$inputs = $process->trap_process($_REQUEST);
+				var_dump($inputs);
+			?>
 		<?php endif; ?>
 		</div>
 	</div>
@@ -79,3 +91,11 @@ if(isset($_GET['soal1_start']) AND isset($_SESSION['soal1_session'])):
 </div>
 
 <?php endif; ?>
+
+<script>
+	document.querySelector('#loading1').style.display="none"
+	const soal1_btn = () =>  {
+		document.querySelector('#loading1').style.display="block"
+		document.querySelector('#text_btn1').style.display="none"
+	}
+</script>

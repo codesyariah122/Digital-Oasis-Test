@@ -21,6 +21,8 @@ class SoalDua extends BaseClass {
 		$this->title = $title;
 		$this->name = $name;
 		$this->value = $value;
+		$db_session = new BaseClass;
+		$db_session->start_session($this->name, $this->value);
 	}
 
 	public function second_component($request, $dir, $file)
@@ -50,9 +52,20 @@ class SoalDua extends BaseClass {
 		$db_session->start_session('db_name', $request['db_name']);
 		
 		if(empty($request['db_host']) or empty($request['db_user']) or empty($request['db_name'])):
-			require_once $this->dir.$this->alert[0].'.php';
+			$alert = new BaseClass;
+			$alert->start_session('url', 'http://localhost:8888/?soal2_start=soal2');
+			$alert->alert([
+				'dir'=>  $this->dir,
+				'file' => $this->alert[0]
+			]);
 		else:
-			require_once $this->dir.$this->alert[1].'.php';
+			// require_once $this->dir.$this->alert[1].'.php';
+			$alert = new BaseClass;
+			$alert->start_session('url', 'http://localhost:8888/?soal2_start=soal2');
+			$alert->alert([
+				'dir'=>  $this->dir,
+				'file' => $this->alert[1]
+			]);
 			$this->create_db($request);
 		endif;
 	}

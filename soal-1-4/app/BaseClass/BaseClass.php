@@ -55,6 +55,11 @@ class BaseClass {
 		return $this->block;
 	}
 
+	public function alert($data)
+	{
+		require_once $data['dir'].$data['file'].'.php';
+	}
+
 	public function components($dir, $file)
 	{
 		$this->dir = $dir;

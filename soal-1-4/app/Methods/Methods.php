@@ -54,12 +54,8 @@ class Methods extends BaseClass {
 
 
 
-	public function result_process($req)
+	public function result_process($data)
 	{
-		// echo "<pre>";
-		// var_dump($req);
-		// echo "</pre>";
-		echo $req['jml'];
-		
+		return $data;
 	}
 }

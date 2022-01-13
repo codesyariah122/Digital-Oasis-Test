@@ -162,7 +162,12 @@ class Database extends BaseClass {
 
 			$this->alert = ['error', 'success'];
 			$this->dir = 'components/alerts/';
-			require_once $this->dir.$this->alert[1].'.php';
+			$alert = new BaseClass;
+			$alert->start_session('url', 'http://localhost:8888/?soal2_start=soal2');
+			$alert->alert([
+				'dir'=>  $this->dir,
+				'file' => $this->alert[1]
+			]);
 			echo "
 				<div class='alert alert-secondary d-flex align-items-center' role='alert'>
 				<svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>

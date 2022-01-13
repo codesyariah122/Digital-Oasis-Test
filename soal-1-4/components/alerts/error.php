@@ -2,10 +2,10 @@
 <script type="text/javascript">
 	Swal.fire({
 		icon: 'error',
-		title: 'Oops...',
-		text: 'Hostname dan DB User wajib di isi'
+		title: 'Oops... ',
+		text: 'Isi input form yang di wajibkan'
 	})
 	setTimeout(()=>{
-		window.location.href="?soal2_start=soal2"
-	},1500)
+		window.location.href="<?=$_SESSION['url']?>"
+	},1000)
 </script>

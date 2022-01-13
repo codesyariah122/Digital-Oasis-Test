@@ -36,8 +36,26 @@ class SoalSatu extends BaseClass {
 
 	public function trap_process($request)
 	{
-		$method = new Methods;
-		$this->request = $request;
-		$method->result_process($this->request);
+		$this->alert = ['error', 'success'];
+		$this->dir = 'components/alerts/';
+		if(empty($request['jml'])):
+			$alert = new BaseClass;
+			$alert->start_session('url', 'http://localhost:8888/?soal1_start=soal1');
+			$alert->alert([
+				'dir'=>  $this->dir,
+				'file' => $this->alert[0]
+			]);
+		else:
+			// require_once $this->dir.$this->alert[1].'.php';
+			$alert = new BaseClass;
+			$alert->start_session('url', 'http://localhost:8888/?soal1_start=soal1');
+			$alert->alert([
+				'dir'=>  $this->dir,
+				'file' => $this->alert[1]
+			]);
+			$method = new Methods;
+			$method->result_process($request);
+		endif;
+		
 	}
 }
