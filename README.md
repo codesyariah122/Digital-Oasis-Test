@@ -1,23 +1,23 @@
 ### Teknikal Test Digital Oasis
 
 #### Preview Program Soal no.5 (CRUD)
-<img src="ss/soal5.jpg">  
+<img src="/ss/soal5.jpg">  
 
-<img src="ss/soal5-1.jpg">  
-
-
-<img src="ss/soal5-2.jpg">  
+<img src="/ss/soal5-1.jpg">  
 
 
-<img src="ss/soal5-3.jpg">  
+<img src="/ss/soal5-2.jpg">  
 
-<img src="ss/soal5-4.jpg">  
 
-<img src="ss/soal5-5.jpg">  
+<img src="/ss/soal5-3.jpg">  
 
-<img src="ss/soal5-6.jpg">   
+<img src="/ss/soal5-4.jpg">  
 
-<img src="ss/soal5-7.jpg">  
+<img src="/ss/soal5-5.jpg">  
+
+<img src="/ss/soal5-6.jpg">   
+
+<img src="/ss/soal5-7.jpg">  
 
 Profile :  
 > Nama : Puji Ermanto
