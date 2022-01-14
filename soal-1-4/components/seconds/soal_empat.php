@@ -61,7 +61,7 @@ if(isset($_GET['soal4_start']) && !isset($_REQUEST['soal4_process'])):
 					</code><br>
 
 					<code>
-						echo "<strong>Bilangan Character : {$bil}</strong>";
+						echo "&lt;strong&gt;Bilangan Character : {$bil}&lt;/strong&gt;";
 					</code><br>
 
 					<code>
@@ -72,9 +72,12 @@ if(isset($_GET['soal4_start']) && !isset($_REQUEST['soal4_process'])):
 						$new_bill = implode($arr);
 					</code><br>
 
+					<code>
 						$bil = str_split($new_bill);
+					</code><br>
+						
 					<code>	
-						echo "br";
+						echo "&lt;br/&gt;";
 					</code><br>
 
 					<code>
@@ -98,11 +101,13 @@ if(isset($_GET['soal4_start']) && !isset($_REQUEST['soal4_process'])):
 					</code><br>
 
 					<code>
-						echo 'br';
+						echo '&lt;br/&gt;';
 					</code><br>
 
 					<code>
-					}	
+					}
+					</code><br>
+					<code>
 					}
 					</code><br>
 			</article>
