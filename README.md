@@ -19,6 +19,14 @@
 
 <img src="ss/soal-5-7.jpg">  
 
+<img src="ss/soal-5-8.jpg"> 
+
+<img src="ss/soal-5-9.jpg">   
+
+<img src="ss/soal-5-10.jpg">  
+
+<img src="ss/soal-5-11.jpg"> 
+
 Profile :  
 > Nama : Puji Ermanto
 Email : pujiermanto@gmail.com
